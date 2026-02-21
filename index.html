@@ -25,7 +25,106 @@
     <title>Job Application Tracker</title>
 </head>
 
-<body>
+<body class="bg-gray-100 min-h-screen">
+    <header class="max-w-8/12 mx-auto py-5">
+        <h1 class="text-2xl md:text-3xl font-bold">Job Application Tracker</h1>
+
+        <!-- Job count -->
+        <div class="mt-5 grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div class="bg-white px-6 py-4 rounded-xl">
+                <p>Total</p>
+                <h2 class="font-bold text-xl">8</h2>
+            </div>
+            <div class="bg-white px-6 py-4 rounded-xl">
+                <p>Interview</p>
+                <h2 class="font-bold text-xl text-green-600">0</h2>
+            </div>
+            <div class="bg-white px-6 py-4  rounded-xl">
+                <p>Rejected</p>
+                <h2 class="font-bold text-xl text-red-600">0</h2>
+            </div>
+        </div>
+
+        <hr class="mt-5 opacity-20">
+    </header>
+
+    <!-- Filter section -->
+    <section class="max-w-8/12 mx-auto">
+        <div class="flex items-center justify-between">
+            <h2 class="text-xl font-bold">Available Jobs</h2>
+            <p>8 jobs</p>
+        </div>
+
+        <!-- Filter buttons -->
+        <div class="flex flex-wrap gap-2 md:gap-5 mt-5">
+            <button class="btn btn-info text-xs md:px-10 text-white">All</button>
+            <button class="btn text-xs md:px-10">Interview</button>
+            <button class="btn text-xs md:px-10">Rejected</button>
+        </div>
+
+        <!-- Job posts container -->
+        <div class="mt-5 space-y-5">
+            <div class="flex justify-between bg-white p-8 shadow rounded-2xl">
+                <div>
+                    <h1 class="text-xl font-bold">Mobile First Corp</h1>
+                    <p class="text-neutral/50 mt-1">React Native Developer</p>
+
+                    <div class="mt-2 md:flex gap-2 items-center text-gray-500">
+                        <p>Remote</p>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                        <p>Full-time</p>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                        <p>$130,000 - $175,000</p>
+                    </div>
+
+                    <button class="mt-5 btn uppercase text-xs">not applied</button>
+                    <p class="mt-2">Build cross-platform mobile applications using React Native. Work on products used by millions of
+                        users worldwide.</p>
+
+                    <!-- Action buttons -->
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <button class="btn btn-outline btn-success uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error uppercase">Rejected</button>
+                    </div>
+                </div>
+
+                <!-- Post delete button -->
+                <button class="btn btn-circle p-6">
+                    <i class="fa-regular fa-trash-can fa-lg"></i>
+                </button>
+            </div>
+            <div class="flex justify-between bg-white p-8 shadow rounded-2xl">
+                <div>
+                    <h1 class="text-xl font-bold">Mobile First Corp</h1>
+                    <p class="text-neutral/50 mt-1">React Native Developer</p>
+
+                    <div class="mt-2 md:flex gap-2 items-center text-gray-500">
+                        <p>Remote</p>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                        <p>Full-time</p>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                        <p>$130,000 - $175,000</p>
+                    </div>
+
+                    <button class="mt-5 btn uppercase text-xs">not applied</button>
+                    <p class="mt-2">Build cross-platform mobile applications using React Native. Work on products used by millions of
+                        users worldwide.</p>
+
+                    <!-- Action buttons -->
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <button class="btn btn-outline btn-success uppercase">Interview</button>
+                        <button class="btn btn-outline btn-error uppercase">Rejected</button>
+                    </div>
+                </div>
+
+                <!-- Post delete button -->
+                <button class="btn btn-circle p-6">
+                    <i class="fa-regular fa-trash-can fa-lg"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- JavaScript File -->
     <script src="./script/script.js"></script>
 </body>
 
