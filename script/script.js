@@ -1,4 +1,4 @@
-const allPostData = [
+let allPostData = [
     {
         companyName: "Google",
         jobTitle: "Frontend Developer",
@@ -105,6 +105,12 @@ const allPostData = [
     }
 ];
 
+// Filter data of status interview
+let interviewPostData = allPostData.filter(post => post.applicationStatus === "interview");
+
+// Filter data of status rejected
+let rejectedPostData = allPostData.filter(post => post.applicationStatus === "rejected");
+
 function renderJobPost(data) {
     const containerEl = document.querySelector("#all-job-post-container");
     containerEl.innerHTML = "";
@@ -142,7 +148,7 @@ function renderJobPost(data) {
                 </div>
 
                 <!-- Post delete button -->
-                <button class="btn btn-circle p-6">
+                <button  class="btn btn-circle p-6">
                     <i class="fa-regular fa-trash-can fa-lg"></i>
                 </button>
         `
@@ -167,18 +173,17 @@ document.getElementById("filter-buttons")
         removeActiveDesign();
         if (clickedButton.contains("filter-all")) {
             clickedButton.add("btn-info", "text-white");
+            updateAvailability(`${allPostData.length} jobs`);
             renderJobPost(allPostData);
         } else if (clickedButton.contains("filter-interview")) {
             clickedButton.add("btn-info", "text-white");
 
-            // Filter data of status interview
-            const interviewPostData = allPostData.filter(post => post.applicationStatus === "interview");
+            updateAvailability(`${interviewPostData.length} of ${allPostData.length} jobs`);
             renderJobPost(interviewPostData);
         } else if (clickedButton.contains("filter-rejected")) {
             clickedButton.add("btn-info", "text-white");
 
-            // Filter data of status interview
-            const rejectedPostData = allPostData.filter(post => post.applicationStatus === "rejected");
+            updateAvailability(`${rejectedPostData.length} of ${allPostData.length} jobs`);
             renderJobPost(rejectedPostData);
         }
     });
@@ -189,5 +194,20 @@ function removeActiveDesign() {
     document.querySelector(".filter-rejected").classList.remove("btn-info", "text-white");
 }
 
-// Display all the job post first
+function countApplicationStatus() {
+    const countTotal = allPostData.length;
+    const countInterview = allPostData.filter(data => data.applicationStatus === "interview").length;
+    const countRejected = allPostData.filter(data => data.applicationStatus === "rejected").length;
+
+    document.getElementById("count-total").innerText = countTotal;
+    document.getElementById("count-interview").innerText = countInterview;
+    document.getElementById("count-rejected").innerText = countRejected;
+}
+
+function updateAvailability(str) {
+    document.getElementById("available-jobs").innerText = `${str}`;
+}
+
 renderJobPost(allPostData);
+countApplicationStatus();
+updateAvailability(`${allPostData.length} jobs`);
