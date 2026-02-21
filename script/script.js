@@ -104,12 +104,10 @@ let allPostData = [
         description: "Manage CI/CD pipelines and cloud infrastructure to support large-scale applications."
     }
 ];
+let interviewPostData = [];
+let rejectedPostData = [];
 
-// Filter data of status interview
-let interviewPostData = allPostData.filter(post => post.applicationStatus === "interview");
-
-// Filter data of status rejected
-let rejectedPostData = allPostData.filter(post => post.applicationStatus === "rejected");
+let currentFilterTab = "all";
 
 function renderJobPost(data) {
     const containerEl = document.querySelector("#all-job-post-container");
@@ -142,14 +140,14 @@ function renderJobPost(data) {
 
                     <!-- Action buttons -->
                     <div class="mt-4 flex flex-wrap gap-2">
-                        <button class="btn btn-outline btn-success uppercase">Interview</button>
-                        <button class="btn btn-outline btn-error uppercase">Rejected</button>
+                        <button class="btn-interview btn btn-outline btn-success uppercase">Interview</button>
+                        <button class="btn-rejected btn btn-outline btn-error uppercase">Rejected</button>
                     </div>
                 </div>
 
                 <!-- Post delete button -->
-                <button  class="btn btn-circle p-6">
-                    <i class="fa-regular fa-trash-can fa-lg"></i>
+                <button class="btn-delete btn btn-circle p-6">
+                    <i class="btn-delete fa-regular fa-trash-can fa-lg"></i>
                 </button>
         `
             containerEl.appendChild(newPost);
@@ -172,18 +170,27 @@ document.getElementById("filter-buttons")
         const clickedButton = event.target.classList;
         removeActiveDesign();
         if (clickedButton.contains("filter-all")) {
+            currentFilterTab = "all";
             clickedButton.add("btn-info", "text-white");
-            updateAvailability(`${allPostData.length} jobs`);
+            updateAvailability();
             renderJobPost(allPostData);
         } else if (clickedButton.contains("filter-interview")) {
+            currentFilterTab = "interview";
             clickedButton.add("btn-info", "text-white");
 
-            updateAvailability(`${interviewPostData.length} of ${allPostData.length} jobs`);
+            // update data
+            updateDataSet();
+
+            updateAvailability();
             renderJobPost(interviewPostData);
         } else if (clickedButton.contains("filter-rejected")) {
+            currentFilterTab = "rejected";
             clickedButton.add("btn-info", "text-white");
 
-            updateAvailability(`${rejectedPostData.length} of ${allPostData.length} jobs`);
+            // update data
+            updateDataSet();
+
+            updateAvailability();
             renderJobPost(rejectedPostData);
         }
     });
@@ -204,10 +211,73 @@ function countApplicationStatus() {
     document.getElementById("count-rejected").innerText = countRejected;
 }
 
-function updateAvailability(str) {
-    document.getElementById("available-jobs").innerText = `${str}`;
+function updateAvailability() {
+    document.getElementById("available-jobs").innerText = `${currentFilterTab === "interview" ? `${interviewPostData.length} of` : currentFilterTab === "rejected" ? `${rejectedPostData.length} of` : ""} ${allPostData.length} jobs`;
 }
+
+function updateDataSet() {
+    // Filter data of status interview
+    interviewPostData = allPostData.filter(post => post.applicationStatus === "interview");
+
+    // Filter data of status rejected
+    rejectedPostData = allPostData.filter(post => post.applicationStatus === "rejected");
+}
+
 
 renderJobPost(allPostData);
 countApplicationStatus();
-updateAvailability(`${allPostData.length} jobs`);
+updateAvailability();
+
+// Event Deligation (Interview - Rejected - Delete)
+document.getElementById("all-job-post-container")
+    .addEventListener("click", function (event) {
+        const selectedEl = event.target.classList;
+        const els = event.target.parentNode.parentNode;
+        const companyName = els.querySelector("h1").innerText;
+
+        if (selectedEl.contains("btn-interview")) {
+            updateStatusInAllPost(companyName, "interview")
+        } else if (selectedEl.contains("btn-rejected")) {
+            updateStatusInAllPost(companyName, "rejected")
+        } else if (selectedEl.contains("btn-delete")) {
+            handleDelete(companyName)
+        }
+    })
+
+function updateStatusInAllPost(companyNameQuery, newStatus) {
+    const selectedJob = allPostData.find(jobPost => jobPost.companyName === companyNameQuery);
+
+    if (selectedJob) {
+        selectedJob.applicationStatus = newStatus;
+    }
+
+    if (currentFilterTab === "all") {
+        renderJobPost(allPostData);
+    } else if (currentFilterTab === "interview") {
+        updateDataSet();
+        renderJobPost(interviewPostData);
+    } else if (currentFilterTab === "rejected") {
+        updateDataSet();
+        renderJobPost(rejectedPostData);
+    }
+    countApplicationStatus();
+}
+
+function handleDelete(companyNameQuery) {
+    allPostData = allPostData.filter((data) => data.companyName !== companyNameQuery);
+
+    updateDataSet();
+    updateAvailability();
+
+    if (currentFilterTab === "all") {
+        renderJobPost(allPostData);
+    } else if (currentFilterTab === "interview") {
+        updateDataSet();
+        renderJobPost(interviewPostData);
+    } else if (currentFilterTab === "rejected") {
+        updateDataSet();
+        renderJobPost(rejectedPostData);
+    }
+
+    countApplicationStatus();
+}
