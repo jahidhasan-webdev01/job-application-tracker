@@ -22,7 +22,7 @@ let allPostData = [
             max: "165,000",
             currency: "$"
         },
-        applicationStatus: "interview",
+        applicationStatus: "not applied",
         description: "Build secure and high-performance APIs using Node.js and Azure cloud services."
     },
     {
@@ -35,7 +35,7 @@ let allPostData = [
             max: "150,000",
             currency: "$"
         },
-        applicationStatus: "interview",
+        applicationStatus: "not applied",
         description: "Work across frontend and backend systems to deliver scalable e-commerce solutions."
     },
     {
@@ -48,7 +48,7 @@ let allPostData = [
             max: "140,000",
             currency: "$"
         },
-        applicationStatus: "rejected",
+        applicationStatus: "not applied",
         description: "Build cross-platform mobile applications used by millions of global users."
     },
     {
