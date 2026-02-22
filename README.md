@@ -32,7 +32,9 @@ For example:
 #### Step 03:
 Get the parent element using selector method. Here I use getElementById().
 For example:
+	```js
 	const container = document.getElementById("container");
+	```
 
 Now append the newDiv as child inside the parent. For that you can use .appendChild() or .append().
 For example:
