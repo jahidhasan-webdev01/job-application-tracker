@@ -30,18 +30,35 @@ For example:
 	newDiv.innerText = "Hello World";
 
 #### Step 03:
-Get the parent element using selector method. Here I use getElementById().
-For example:
-	```js
+Get the parent element using selector method. Here I use getElementById().<br>
+For example: <br>
 	const container = document.getElementById("container");
-	```
+
 
 Now append the newDiv as child inside the parent. For that you can use .appendChild() or .append().
 For example:
 	container.appendChild(newDiv);
 
 ### 3. What is Event Bubbling? And how does it work?
+Answer: Event Bubbling is one kind of behavior where event start from target element and goes up step by step (parent by parent) to the root of the DOM. 
+
+#### Working behavior:
+1. Event focus the target element.
+2. Then moves to it's parent.
+2. Then go to the grandparent.
+3. Then grandparent to great granparent till reached to root.
 
 ### 4. What is Event Delegation in JavaScript? Why is it useful?
+Answer: Event Delegation is a technique where a single event listener can handle events for multiple child elements instead of adding separate event listeners to each child element. You can differentiate the target element by checking whether it contains a specific class using classList.contains().
+
+It is very useful when you need to handle multiple types of operations inside a parent element. Instead of adding an event listener to every child element, you can use just one on the parent. This improves performance, makes the code cleaner and more maintainable, and also ensures that newly added child elements will also work without adding extra event listeners.
 
 ### 5. What is the difference between preventDefault() and stopPropagation() methods?
+Answer: 
+#### preventDefault() 
+It stops the browser’s default behavior for an event.
+For example: 
+	It can stop reloading when submit a form.
+
+#### stopPropagation() 
+It stops the event from moving up to parent elements in the DOM.

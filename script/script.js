@@ -228,7 +228,7 @@ renderJobPost(allPostData);
 countApplicationStatus();
 updateAvailability();
 
-// Event Deligation (Interview - Rejected - Delete)
+// Event Delegation (Interview - Rejected - Delete)
 document.getElementById("all-job-post-container")
     .addEventListener("click", function (event) {
         const selectedEl = event.target.classList;
