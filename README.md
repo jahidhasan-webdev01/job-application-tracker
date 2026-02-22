@@ -17,6 +17,26 @@ On the other hand, querySelectorAll returns you an array of node or NodeList of 
 
 
 ### 2. How do you create and insert a new element into the DOM?
+Answer: To create and insert a new element into the DOM, need to follow some steps.
+
+#### Step 01:
+Firstly, create an element using document.createElement(). You can pass the element name inside the method like "div", "p" etc.
+For example:
+	const newDiv = document.createElement("div");
+
+#### Step 02:
+Now you can add content, classname, design etc you want. Here I am adding a text "Hello World" using .innerText.
+For example:
+	newDiv.innerText = "Hello World";
+
+#### Step 03:
+Get the parent element using selector method. Here I use getElementById().
+For example:
+	const container = document.getElementById("container");
+
+Now append the newDiv as child inside the parent. For that you can use .appendChild() or .append().
+For example:
+	container.appendChild(newDiv);
 
 ### 3. What is Event Bubbling? And how does it work?
 
