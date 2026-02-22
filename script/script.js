@@ -115,7 +115,7 @@ function renderJobPost(data) {
     if (data.length > 0) {
         for (const jobPost of data) {
             const newPost = document.createElement("div");
-            newPost.classList = "flex justify-between bg-white p-8 shadow rounded-2xl";
+            newPost.classList = "flex justify-between bg-white p-4 md:p-8 shadow rounded-2xl";
             newPost.innerHTML = `
                 <div>
                     <h1 class="text-xl font-bold">${jobPost.companyName}</h1>
@@ -146,8 +146,8 @@ function renderJobPost(data) {
                 </div>
 
                 <!-- Post delete button -->
-                <button class="btn-delete btn btn-circle p-6">
-                    <i class="btn-delete fa-regular fa-trash-can fa-lg"></i>
+                <button class="btn-delete btn btn-circle md:p-6">
+                    <i class="btn-delete fa-regular fa-trash-can md:fa-lg"></i>
                 </button>
         `
             containerEl.appendChild(newPost);
