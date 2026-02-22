@@ -1,108 +1,108 @@
 let allPostData = [
-    {
-        companyName: "Google",
-        jobTitle: "Frontend Developer",
-        workType: "remote",
-        employmentType: "Full-time",
-        salary: {
-            min: "130,000",
-            max: "175,000",
-            currency: "$"
-        },
-        applicationStatus: "not applied",
-        description: "Develop and maintain scalable frontend applications using React and TypeScript."
+  {
+    companyName: "Google",
+    jobTitle: "Frontend Developer",
+    workType: "remote",
+    employmentType: "Full-time",
+    salary: {
+      min: "130,000",
+      max: "175,000",
+      currency: "$"
     },
-    {
-        companyName: "Microsoft",
-        jobTitle: "Backend Engineer",
-        workType: "hybrid",
-        employmentType: "Full-time",
-        salary: {
-            min: "120,000",
-            max: "165,000",
-            currency: "$"
-        },
-        applicationStatus: "not applied",
-        description: "Build secure and high-performance APIs using Node.js and Azure cloud services."
+    applicationStatus: "not applied",
+    description: "Build and maintain modern React applications. Work with designers and backend teams to create fast and responsive user interfaces."
+  },
+  {
+    companyName: "Microsoft",
+    jobTitle: "Backend Engineer",
+    workType: "hybrid",
+    employmentType: "Full-time",
+    salary: {
+      min: "120,000",
+      max: "165,000",
+      currency: "$"
     },
-    {
-        companyName: "Amazon",
-        jobTitle: "Full Stack Developer",
-        workType: "onsite",
-        employmentType: "Full-time",
-        salary: {
-            min: "110,000",
-            max: "150,000",
-            currency: "$"
-        },
-        applicationStatus: "not applied",
-        description: "Work across frontend and backend systems to deliver scalable e-commerce solutions."
+    applicationStatus: "not applied",
+    description: "Develop secure APIs and backend services using Node.js and Azure. Ensure performance, scalability, and data protection."
+  },
+  {
+    companyName: "Amazon",
+    jobTitle: "Full Stack Developer",
+    workType: "onsite",
+    employmentType: "Full-time",
+    salary: {
+      min: "110,000",
+      max: "150,000",
+      currency: "$"
     },
-    {
-        companyName: "Meta",
-        jobTitle: "React Native Developer",
-        workType: "remote",
-        employmentType: "Contract",
-        salary: {
-            min: "100,000",
-            max: "140,000",
-            currency: "$"
-        },
-        applicationStatus: "not applied",
-        description: "Build cross-platform mobile applications used by millions of global users."
+    applicationStatus: "not applied",
+    description: "Work on frontend and backend features for scalable e-commerce platforms. Participate in testing and code reviews."
+  },
+  {
+    companyName: "Meta",
+    jobTitle: "React Native Developer",
+    workType: "remote",
+    employmentType: "Contract",
+    salary: {
+      min: "100,000",
+      max: "140,000",
+      currency: "$"
     },
-    {
-        companyName: "Netflix",
-        jobTitle: "UI/UX Engineer",
-        workType: "hybrid",
-        employmentType: "Full-time",
-        salary: {
-            min: "125,000",
-            max: "170,000",
-            currency: "$"
-        },
-        applicationStatus: "not applied",
-        description: "Design and implement highly engaging user interfaces for streaming platforms."
+    applicationStatus: "not applied",
+    description: "Build cross-platform mobile apps using React Native. Optimize performance and integrate third-party APIs."
+  },
+  {
+    companyName: "Netflix",
+    jobTitle: "UI/UX Engineer",
+    workType: "hybrid",
+    employmentType: "Full-time",
+    salary: {
+      min: "125,000",
+      max: "170,000",
+      currency: "$"
     },
-    {
-        companyName: "Spotify",
-        jobTitle: "Software Engineer",
-        workType: "remote",
-        employmentType: "Full-time",
-        salary: {
-            min: "115,000",
-            max: "160,000",
-            currency: "$"
-        },
-        applicationStatus: "not applied",
-        description: "Develop backend systems powering music streaming and recommendation engines."
+    applicationStatus: "not applied",
+    description: "Create engaging user interfaces and improve user experience across web and mobile streaming platforms."
+  },
+  {
+    companyName: "Spotify",
+    jobTitle: "Software Engineer",
+    workType: "remote",
+    employmentType: "Full-time",
+    salary: {
+      min: "115,000",
+      max: "160,000",
+      currency: "$"
     },
-    {
-        companyName: "Airbnb",
-        jobTitle: "JavaScript Developer",
-        workType: "remote",
-        employmentType: "Part-time",
-        salary: {
-            min: "90,000",
-            max: "120,000",
-            currency: "$"
-        },
-        applicationStatus: "not applied",
-        description: "Improve booking and hosting experiences with modern JavaScript frameworks."
+    applicationStatus: "not applied",
+    description: "Develop backend systems for music streaming and recommendation services. Improve system scalability and performance."
+  },
+  {
+    companyName: "Airbnb",
+    jobTitle: "JavaScript Developer",
+    workType: "remote",
+    employmentType: "Part-time",
+    salary: {
+      min: "90,000",
+      max: "120,000",
+      currency: "$"
     },
-    {
-        companyName: "Tesla",
-        jobTitle: "DevOps Engineer",
-        workType: "onsite",
-        employmentType: "Full-time",
-        salary: {
-            min: "135,000",
-            max: "180,000",
-            currency: "$"
-        },
-        applicationStatus: "not applied",
-        description: "Manage CI/CD pipelines and cloud infrastructure to support large-scale applications."
-    }
+    applicationStatus: "not applied",
+    description: "Build dynamic booking features using modern JavaScript frameworks. Optimize application speed and usability."
+  },
+  {
+    companyName: "Tesla",
+    jobTitle: "DevOps Engineer",
+    workType: "onsite",
+    employmentType: "Full-time",
+    salary: {
+      min: "135,000",
+      max: "180,000",
+      currency: "$"
+    },
+    applicationStatus: "not applied",
+    description: "Manage CI/CD pipelines and cloud infrastructure. Ensure reliable and secure deployment processes."
+  }
 ];
 let interviewPostData = [];
 let rejectedPostData = [];
@@ -115,7 +115,7 @@ function renderJobPost(data) {
     if (data.length > 0) {
         for (const jobPost of data) {
             const newPost = document.createElement("div");
-            newPost.classList = "flex justify-between bg-white p-4 md:p-8 shadow rounded-2xl";
+            newPost.classList = "flex justify-between bg-white p-4 md:p-8 shadow rounded-2xl text-justify";
             newPost.innerHTML = `
                 <div>
                     <h1 class="text-xl font-bold">${jobPost.companyName}</h1>
@@ -146,7 +146,7 @@ function renderJobPost(data) {
                 </div>
 
                 <!-- Post delete button -->
-                <button class="btn-delete btn btn-circle md:p-6">
+                <button class="btn-delete btn btn-circle bg-error text-white md:p-6">
                     <i class="btn-delete fa-regular fa-trash-can md:fa-lg"></i>
                 </button>
         `
@@ -260,6 +260,7 @@ function updateStatusInAllPost(companyNameQuery, newStatus) {
         updateDataSet();
         renderJobPost(rejectedPostData);
     }
+    updateAvailability();
     countApplicationStatus();
 }
 
