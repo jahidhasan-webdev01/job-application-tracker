@@ -35,8 +35,8 @@ For example: <br>
 	const container = document.getElementById("container");
 
 
-Now append the newDiv as child inside the parent. For that you can use .appendChild() or .append().
-For example:
+Now append the newDiv as child inside the parent. For that you can use .appendChild() or .append(). <br>
+For example: <br>
 	container.appendChild(newDiv);
 
 ### 3. What is Event Bubbling? And how does it work?
