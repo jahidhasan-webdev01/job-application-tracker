@@ -2,7 +2,7 @@ let allPostData = [
   {
     companyName: "Google",
     jobTitle: "Frontend Developer",
-    workType: "remote",
+    location: "New York, USA",
     employmentType: "Full-time",
     salary: {
       min: "130,000",
@@ -15,7 +15,7 @@ let allPostData = [
   {
     companyName: "Microsoft",
     jobTitle: "Backend Engineer",
-    workType: "hybrid",
+    location: "Seattle, USA",
     employmentType: "Full-time",
     salary: {
       min: "120,000",
@@ -28,7 +28,7 @@ let allPostData = [
   {
     companyName: "Amazon",
     jobTitle: "Full Stack Developer",
-    workType: "onsite",
+    location: "San Francisco, USA",
     employmentType: "Full-time",
     salary: {
       min: "110,000",
@@ -41,7 +41,7 @@ let allPostData = [
   {
     companyName: "Meta",
     jobTitle: "React Native Developer",
-    workType: "remote",
+    location: "Menlo Park, USA",
     employmentType: "Contract",
     salary: {
       min: "100,000",
@@ -54,7 +54,7 @@ let allPostData = [
   {
     companyName: "Netflix",
     jobTitle: "UI/UX Engineer",
-    workType: "hybrid",
+    location: "Los Angeles, USA",
     employmentType: "Full-time",
     salary: {
       min: "125,000",
@@ -67,7 +67,7 @@ let allPostData = [
   {
     companyName: "Spotify",
     jobTitle: "Software Engineer",
-    workType: "remote",
+    location: "Stockholm, Sweden",
     employmentType: "Full-time",
     salary: {
       min: "115,000",
@@ -80,7 +80,7 @@ let allPostData = [
   {
     companyName: "Airbnb",
     jobTitle: "JavaScript Developer",
-    workType: "remote",
+    location: "San Francisco, USA",
     employmentType: "Part-time",
     salary: {
       min: "90,000",
@@ -93,7 +93,7 @@ let allPostData = [
   {
     companyName: "Tesla",
     jobTitle: "DevOps Engineer",
-    workType: "onsite",
+    location: "Austin, USA",
     employmentType: "Full-time",
     salary: {
       min: "135,000",
@@ -115,28 +115,28 @@ function renderJobPost(data) {
     if (data.length > 0) {
         for (const jobPost of data) {
             const newPost = document.createElement("div");
-            newPost.classList = "flex justify-between bg-white p-4 md:p-8 shadow rounded-2xl text-justify";
+            newPost.classList = "flex justify-between bg-white p-4 md:p-8  border border-gray-300 shadow rounded-2xl text-justify";
             newPost.innerHTML = `
                 <div>
                     <h1 class="text-xl font-bold">${jobPost.companyName}</h1>
-                    <p class="text-gray-500 mt-1">${jobPost.jobTitle}</p>
+                    <p class="text-gray-600 mt-1">${jobPost.jobTitle}</p>
 
-                    <div class="mt-2 md:flex gap-2 items-center text-gray-500">
-                        <p class="capitalize">${jobPost.workType}</p>
-                        <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                    <div class="mt-4 md:flex gap-2 items-center text-gray-600 text-sm">
+                        <p class="capitalize">${jobPost.location}</p>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
                         <p>${jobPost.employmentType}</p>
-                        <span class="w-1.5 h-1.5 rounded-full bg-gray-500"></span>
+                        <span class="w-1.5 h-1.5 rounded-full bg-gray-600"></span>
                         <p>$${jobPost.salary.min} - $${jobPost.salary.max}</p>
                     </div>
 
-                    <button class="mt-5 btn 
+                    <button class="mt-5 btn btn-xs 
                     ${jobPost.applicationStatus ===
                     "interview" ? "btn-success text-white" :
                     jobPost.applicationStatus ===
                         "rejected" ? "btn-error text-white" :
                         "btn-active"}  uppercase text-xs">${jobPost.applicationStatus}</button>
 
-                    <p class="mt-2">${jobPost.description}</p>
+                    <p class="mt-4 text-gray-600 text-sm">${jobPost.description}</p>
 
                     <!-- Action buttons -->
                     <div class="mt-4 flex flex-wrap gap-2">
@@ -146,7 +146,7 @@ function renderJobPost(data) {
                 </div>
 
                 <!-- Post delete button -->
-                <button class="btn-delete btn btn-circle bg-error text-white md:p-6">
+                <button class="btn-delete btn btn-circle md:p-6">
                     <i class="btn-delete fa-regular fa-trash-can md:fa-lg"></i>
                 </button>
         `
