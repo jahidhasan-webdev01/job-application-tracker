@@ -1,108 +1,108 @@
 let allPostData = [
-  {
-    companyName: "Google",
-    jobTitle: "Frontend Developer",
-    location: "New York, USA",
-    employmentType: "Full-time",
-    salary: {
-      min: "130,000",
-      max: "175,000",
-      currency: "$"
+    {
+        companyName: "Google",
+        jobTitle: "Frontend Developer",
+        location: "New York, USA",
+        employmentType: "Full-time",
+        salary: {
+            min: "130,000",
+            max: "175,000",
+            currency: "$"
+        },
+        applicationStatus: "not applied",
+        description: "Build and maintain modern React applications. Work with designers and backend teams to create fast and responsive user interfaces."
     },
-    applicationStatus: "not applied",
-    description: "Build and maintain modern React applications. Work with designers and backend teams to create fast and responsive user interfaces."
-  },
-  {
-    companyName: "Microsoft",
-    jobTitle: "Backend Engineer",
-    location: "Seattle, USA",
-    employmentType: "Full-time",
-    salary: {
-      min: "120,000",
-      max: "165,000",
-      currency: "$"
+    {
+        companyName: "Microsoft",
+        jobTitle: "Backend Engineer",
+        location: "Seattle, USA",
+        employmentType: "Full-time",
+        salary: {
+            min: "120,000",
+            max: "165,000",
+            currency: "$"
+        },
+        applicationStatus: "not applied",
+        description: "Develop secure APIs and backend services using Node.js and Azure. Ensure performance, scalability, and data protection."
     },
-    applicationStatus: "not applied",
-    description: "Develop secure APIs and backend services using Node.js and Azure. Ensure performance, scalability, and data protection."
-  },
-  {
-    companyName: "Amazon",
-    jobTitle: "Full Stack Developer",
-    location: "San Francisco, USA",
-    employmentType: "Full-time",
-    salary: {
-      min: "110,000",
-      max: "150,000",
-      currency: "$"
+    {
+        companyName: "Amazon",
+        jobTitle: "Full Stack Developer",
+        location: "San Francisco, USA",
+        employmentType: "Full-time",
+        salary: {
+            min: "110,000",
+            max: "150,000",
+            currency: "$"
+        },
+        applicationStatus: "not applied",
+        description: "Work on frontend and backend features for scalable e-commerce platforms. Participate in testing and code reviews."
     },
-    applicationStatus: "not applied",
-    description: "Work on frontend and backend features for scalable e-commerce platforms. Participate in testing and code reviews."
-  },
-  {
-    companyName: "Meta",
-    jobTitle: "React Native Developer",
-    location: "Menlo Park, USA",
-    employmentType: "Contract",
-    salary: {
-      min: "100,000",
-      max: "140,000",
-      currency: "$"
+    {
+        companyName: "Meta",
+        jobTitle: "React Native Developer",
+        location: "Menlo Park, USA",
+        employmentType: "Contract",
+        salary: {
+            min: "100,000",
+            max: "140,000",
+            currency: "$"
+        },
+        applicationStatus: "not applied",
+        description: "Build cross-platform mobile apps using React Native. Optimize performance and integrate third-party APIs."
     },
-    applicationStatus: "not applied",
-    description: "Build cross-platform mobile apps using React Native. Optimize performance and integrate third-party APIs."
-  },
-  {
-    companyName: "Netflix",
-    jobTitle: "UI/UX Engineer",
-    location: "Los Angeles, USA",
-    employmentType: "Full-time",
-    salary: {
-      min: "125,000",
-      max: "170,000",
-      currency: "$"
+    {
+        companyName: "Netflix",
+        jobTitle: "UI/UX Engineer",
+        location: "Los Angeles, USA",
+        employmentType: "Full-time",
+        salary: {
+            min: "125,000",
+            max: "170,000",
+            currency: "$"
+        },
+        applicationStatus: "not applied",
+        description: "Create engaging user interfaces and improve user experience across web and mobile streaming platforms."
     },
-    applicationStatus: "not applied",
-    description: "Create engaging user interfaces and improve user experience across web and mobile streaming platforms."
-  },
-  {
-    companyName: "Spotify",
-    jobTitle: "Software Engineer",
-    location: "Stockholm, Sweden",
-    employmentType: "Full-time",
-    salary: {
-      min: "115,000",
-      max: "160,000",
-      currency: "$"
+    {
+        companyName: "Spotify",
+        jobTitle: "Software Engineer",
+        location: "Stockholm, Sweden",
+        employmentType: "Full-time",
+        salary: {
+            min: "115,000",
+            max: "160,000",
+            currency: "$"
+        },
+        applicationStatus: "not applied",
+        description: "Develop backend systems for music streaming and recommendation services. Improve system scalability and performance."
     },
-    applicationStatus: "not applied",
-    description: "Develop backend systems for music streaming and recommendation services. Improve system scalability and performance."
-  },
-  {
-    companyName: "Airbnb",
-    jobTitle: "JavaScript Developer",
-    location: "San Francisco, USA",
-    employmentType: "Part-time",
-    salary: {
-      min: "90,000",
-      max: "120,000",
-      currency: "$"
+    {
+        companyName: "Airbnb",
+        jobTitle: "JavaScript Developer",
+        location: "San Francisco, USA",
+        employmentType: "Part-time",
+        salary: {
+            min: "90,000",
+            max: "120,000",
+            currency: "$"
+        },
+        applicationStatus: "not applied",
+        description: "Build dynamic booking features using modern JavaScript frameworks. Optimize application speed and usability."
     },
-    applicationStatus: "not applied",
-    description: "Build dynamic booking features using modern JavaScript frameworks. Optimize application speed and usability."
-  },
-  {
-    companyName: "Tesla",
-    jobTitle: "DevOps Engineer",
-    location: "Austin, USA",
-    employmentType: "Full-time",
-    salary: {
-      min: "135,000",
-      max: "180,000",
-      currency: "$"
-    },
-    applicationStatus: "not applied",
-    description: "Manage CI/CD pipelines and cloud infrastructure. Ensure reliable and secure deployment processes."
-  }
+    {
+        companyName: "Tesla",
+        jobTitle: "DevOps Engineer",
+        location: "Austin, USA",
+        employmentType: "Full-time",
+        salary: {
+            min: "135,000",
+            max: "180,000",
+            currency: "$"
+        },
+        applicationStatus: "not applied",
+        description: "Manage CI/CD pipelines and cloud infrastructure. Ensure reliable and secure deployment processes."
+    }
 ];
 let interviewPostData = [];
 let rejectedPostData = [];
@@ -146,7 +146,7 @@ function renderJobPost(data) {
                 </div>
 
                 <!-- Post delete button -->
-                <button class="btn-delete btn btn-circle md:p-6">
+                <button class="btn btn-circle md:p-6">
                     <i class="btn-delete fa-regular fa-trash-can md:fa-lg"></i>
                 </button>
         `
